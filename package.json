@@ -1,0 +1,33 @@
+{
+  "name": "flow-data-exchange-example",
+  "version": "1.0.0",
+  "description": "Repositório de exemplo para servir de endpoint de data exchange de um WhatsApp Flows",
+  "main": "main/index.ts",
+  "scripts": {
+    "dev": "node --experimental-strip-types --watch --env-file=.env.development src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndigoHive/flow-data-exchange-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/IndigoHive/flow-data-exchange-example/issues"
+  },
+  "homepage": "https://github.com/IndigoHive/flow-data-exchange-example#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.14",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=23.0.0"
+  }
+}
