@@ -1,10 +1,11 @@
 import crypto from 'node:crypto'
 import { TAG_LENGTH } from '../constants.ts'
+import type { FlowDataExchangeCommand } from '../types/flow-data-exchange-command.ts'
 import type { FlowRequestBody } from '../types/flow-request-body.ts'
 import { FlowEndpointException } from './flow-endpoint-exception.ts'
 
 export type DecryptRequestResult = {
-  decryptedBody: any
+  decryptedBody: FlowDataExchangeCommand
   aesKeyBuffer: Buffer
   initialVectorBuffer: Buffer
 }
