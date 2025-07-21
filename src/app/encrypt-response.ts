@@ -1,7 +1,8 @@
 import crypto from 'node:crypto'
+import type { FlowDataExchangeResult } from '../types/flow-data-exchange-result.ts'
 
 export function encryptResponse (
-  response: any,
+  response: FlowDataExchangeResult,
   aesKeyBuffer: Buffer,
   initialVectorBuffer: Buffer
 ): string {
