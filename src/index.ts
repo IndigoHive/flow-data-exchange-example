@@ -47,7 +47,7 @@ app.post('/flow', (req, res) => {
   const result = handleFlowDataExchange(decryptedBody)
 
   // Encrypt the response body
-  const encryptedResponse = encryptResponse(result!, aesKeyBuffer, initialVectorBuffer)
+  const encryptedResponse = encryptResponse(result, aesKeyBuffer, initialVectorBuffer)
 
   res.send(encryptedResponse)
 })
