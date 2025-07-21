@@ -1,6 +1,7 @@
 import crypto from 'node:crypto'
 import { TAG_LENGTH } from '../constants.ts'
 import type { FlowRequestBody } from '../types/flow-request-body.ts'
+import { FlowEndpointException } from './flow-endpoint-exception.ts'
 
 export type DecryptRequestResult = {
   decryptedBody: any
@@ -31,7 +32,10 @@ export function decryptRequest (
   } catch (error) {
     console.error('Error decrypting AES key:', error)
 
-    throw new Error('Failed to decrypt AES key')
+    throw new FlowEndpointException(
+      421,
+      'Failed to decrypt the request. Please verify your private key.'
+    )
   }
 
   const flowDataBuffer = Buffer.from(encrypted_flow_data, 'base64')
