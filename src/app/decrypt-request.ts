@@ -1,5 +1,4 @@
 import crypto from 'node:crypto'
-import { TAG_LENGTH } from '../constants.ts'
 import type { FlowDataExchangeCommand } from '../types/flow-data-exchange-command.ts'
 import type { FlowRequestBody } from '../types/flow-request-body.ts'
 import { FlowEndpointException } from './flow-endpoint-exception.ts'
@@ -42,11 +41,12 @@ export function decryptRequest (
   const flowDataBuffer = Buffer.from(encrypted_flow_data, 'base64')
   const initialVectorBuffer = Buffer.from(initial_vector, 'base64')
 
+  const TAG_LENGTH = 16
   const encryptedFlowDataBody = flowDataBuffer.subarray(0, -TAG_LENGTH)
   const encryptedFlowDataTag = flowDataBuffer.subarray(-TAG_LENGTH)
 
   const decipher = crypto.createDecipheriv(
-    'aes-256-gcm',
+    'aes-128-gcm',
     decryptedAesKey,
     initialVectorBuffer
   )
