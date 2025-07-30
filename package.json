@@ -4,7 +4,7 @@
   "description": "Repositório de exemplo para servir de endpoint de data exchange de um WhatsApp Flows",
   "main": "main/index.ts",
   "scripts": {
-    "dev": "node --experimental-strip-types --watch --env-file=.env.development src/index.ts",
+    "dev": "node --experimental-strip-types --watch --env-file-if-exists=.env.development src/index.ts",
     "start": "node --experimental-strip-types --env-file-if-exists=.env src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
