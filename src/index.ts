@@ -46,6 +46,10 @@ app.post('/flow', (req, res) => {
   // Handle the data exchange command
   const result = handleFlowDataExchange(decryptedBody)
 
+  if (!result) {
+    throw new FlowEndpointException(500, 'No result returned from handleFlowDataExchange')
+  }
+
   // Encrypt the response body
   const encryptedResponse = encryptResponse(result, aesKeyBuffer, initialVectorBuffer)
 
