@@ -2,12 +2,10 @@
   "name": "flow-data-exchange-example",
   "version": "1.0.0",
   "description": "Repositório de exemplo para servir de endpoint de data exchange de um WhatsApp Flows",
-  "main": "main/index.ts",
   "scripts": {
     "dev": "tsx watch --env-file-if-exists=.env.development src/index.ts",
     "build": "tsc --project tsconfig.json",
-    "start": "node --env-file-if-exists=.env build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file-if-exists=.env build/index.js"
   },
   "repository": {
     "type": "git",
