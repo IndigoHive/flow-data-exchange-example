@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Repositório de exemplo para servir de endpoint de data exchange de um WhatsApp Flows",
   "scripts": {
-    "dev": "tsx watch --env-file-if-exists=.env.development src/index.ts",
+    "dev": "dotenv -e .env.development -e .env.development.local -- tsx watch src/index.ts",
     "build": "tsc --project tsconfig.json",
-    "start": "node --env-file-if-exists=.env build/index.js"
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,10 +25,11 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.14",
+    "dotenv-cli": "^10.0.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=20.0.0"
   }
 }
